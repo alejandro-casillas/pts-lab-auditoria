@@ -1,0 +1,1232 @@
+{
+  "institucion": "Preparatoria Tonalá Sur",
+  "sistema": "Inventario de Infraestructura Eléctrica y Cómputo",
+  "laboratorios": [
+    {
+      "id": "LAB-A",
+      "nombre": "Laboratorio A",
+      "docentePC": {
+        "id": "PC00",
+        "rol": "docente",
+        "laboratorio": "LAB-A",
+        "fila": "Docente",
+        "seccion": "Frente",
+        "proteccion": {
+          "tipo": "independiente",
+          "dispositivoId": "TOMA-DIRECTA-A",
+          "nombre": "Toma directa / Sin UPS",
+          "compartidoCon": null,
+          "provisional": true,
+          "nota": "No asignada a los 20 UPS de alumnos."
+        }
+      },
+      "filas": [
+        {
+          "filaNumero": 1,
+          "id": "F1",
+          "izquierda": [
+            {
+              "id": "PC01",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F1",
+              "seccion": "Izquierda",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-01",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC02",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC02",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F1",
+              "seccion": "Izquierda",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-01",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC01",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC03",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F1",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-02",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC04",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC04",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F1",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-02",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC03",
+                "provisional": false
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC05",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F1",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-03",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC06",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC06",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F1",
+              "seccion": "Derecha",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-03",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC05",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC07",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F1",
+              "seccion": "Derecha",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-04",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC08",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC08",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F1",
+              "seccion": "Derecha",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-04",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC07",
+                "provisional": false
+              }
+            }
+          ]
+        },
+        {
+          "filaNumero": 2,
+          "id": "F2",
+          "izquierda": [
+            {
+              "id": "PC09",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F2",
+              "seccion": "Izquierda",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-05",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC10",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC10",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F2",
+              "seccion": "Izquierda",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-05",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC09",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC11",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F2",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-06",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC12",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC12",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F2",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-06",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC11",
+                "provisional": false
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC13",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F2",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-07",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC14",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC14",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F2",
+              "seccion": "Derecha",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-07",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC13",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC15",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F2",
+              "seccion": "Derecha",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-08",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC16",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC16",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F2",
+              "seccion": "Derecha",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-08",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC15",
+                "provisional": false
+              }
+            }
+          ]
+        },
+        {
+          "filaNumero": 3,
+          "id": "F3",
+          "izquierda": [
+            {
+              "id": "PC17",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F3",
+              "seccion": "Izquierda",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-09",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC18",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC18",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F3",
+              "seccion": "Izquierda",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-09",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC17",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC19",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F3",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-10",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC20",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC20",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F3",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-10",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC19",
+                "provisional": false
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC21",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F3",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-11",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC22",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC22",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F3",
+              "seccion": "Derecha",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-11",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC21",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC23",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F3",
+              "seccion": "Derecha",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-12",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC24",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC24",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F3",
+              "seccion": "Derecha",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-12",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC23",
+                "provisional": false
+              }
+            }
+          ]
+        },
+        {
+          "filaNumero": 4,
+          "id": "F4",
+          "izquierda": [
+            {
+              "id": "PC25",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F4",
+              "seccion": "Izquierda",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-13",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC26",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC26",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F4",
+              "seccion": "Izquierda",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-13",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC25",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC27",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F4",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-14",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC28",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC28",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F4",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-14",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC27",
+                "provisional": false
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC29",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F4",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-15",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC30",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC30",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F4",
+              "seccion": "Derecha",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-15",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC29",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC31",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F4",
+              "seccion": "Derecha",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-16",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC32",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC32",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F4",
+              "seccion": "Derecha",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-16",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC31",
+                "provisional": false
+              }
+            }
+          ]
+        },
+        {
+          "filaNumero": 5,
+          "id": "F5",
+          "izquierda": [
+            {
+              "id": "PC33",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F5",
+              "seccion": "Izquierda",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-17",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC34",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC34",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F5",
+              "seccion": "Izquierda",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-17",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC33",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC35",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F5",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-18",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC36",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC36",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F5",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-18",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC35",
+                "provisional": false
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC37",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F5",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-19",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC38",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC38",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F5",
+              "seccion": "Derecha",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-19",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC37",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC39",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F5",
+              "seccion": "Derecha",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-20",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC40",
+                "provisional": false
+              }
+            },
+            {
+              "id": "PC40",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F5",
+              "seccion": "Derecha",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-20",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC39",
+                "provisional": false
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "LAB-B",
+      "nombre": "Laboratorio B",
+      "docentePC": {
+        "id": "PC00",
+        "rol": "docente",
+        "laboratorio": "LAB-B",
+        "fila": "Docente",
+        "seccion": "Frente",
+        "proteccion": {
+          "tipo": "independiente",
+          "dispositivoId": "TOMA-DIRECTA-B",
+          "nombre": "Toma directa / Sin UPS",
+          "compartidoCon": null,
+          "provisional": true,
+          "nota": "No asignada a los 8 reguladores ni a los 8 UPS de alumnos."
+        }
+      },
+      "filas": [
+        {
+          "filaNumero": 1,
+          "id": "F1",
+          "izquierda": [
+            {
+              "id": "PC01",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F1",
+              "seccion": "Izquierda",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-01",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC02",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC02",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F1",
+              "seccion": "Izquierda",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-01",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC01",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC03",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F1",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-02",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC04",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC04",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F1",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-02",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC03",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC05",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F1",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-03",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC06",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC06",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F1",
+              "seccion": "Derecha",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-03",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC05",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC07",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F1",
+              "seccion": "Derecha",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-04",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC08",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC08",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F1",
+              "seccion": "Derecha",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-04",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC07",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            }
+          ]
+        },
+        {
+          "filaNumero": 2,
+          "id": "F2",
+          "izquierda": [
+            {
+              "id": "PC09",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F2",
+              "seccion": "Izquierda",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-05",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC10",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC10",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F2",
+              "seccion": "Izquierda",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-05",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC09",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC11",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F2",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-06",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC12",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC12",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F2",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-06",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC11",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC13",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F2",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-07",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC14",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC14",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F2",
+              "seccion": "Derecha",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-07",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC13",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC15",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F2",
+              "seccion": "Derecha",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-08",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC16",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC16",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F2",
+              "seccion": "Derecha",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-08",
+                "nombre": "Regulador Volteck",
+                "compartidoCon": "PC15",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            }
+          ]
+        },
+        {
+          "filaNumero": 3,
+          "id": "F3",
+          "izquierda": [
+            {
+              "id": "PC17",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F3",
+              "seccion": "Izquierda",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-01",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC18",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC18",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F3",
+              "seccion": "Izquierda",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-01",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC17",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC19",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F3",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-02",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC20",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC20",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F3",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-02",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC19",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC21",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F3",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-03",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC22",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC22",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F3",
+              "seccion": "Derecha",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-03",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC21",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC23",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F3",
+              "seccion": "Derecha",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-04",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC24",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC24",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F3",
+              "seccion": "Derecha",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-04",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC23",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            }
+          ]
+        },
+        {
+          "filaNumero": 4,
+          "id": "F4",
+          "izquierda": [
+            {
+              "id": "PC25",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F4",
+              "seccion": "Izquierda",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-05",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC26",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC26",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F4",
+              "seccion": "Izquierda",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-05",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC25",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC27",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F4",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-06",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC28",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC28",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F4",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-06",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC27",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC29",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F4",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-07",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC30",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC30",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F4",
+              "seccion": "Derecha",
+              "posicion": 2,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-07",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC29",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC31",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F4",
+              "seccion": "Derecha",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-08",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC32",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            },
+            {
+              "id": "PC32",
+              "rol": "alumno",
+              "laboratorio": "LAB-B",
+              "fila": "F4",
+              "seccion": "Derecha",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-08",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC31",
+                "provisional": true,
+                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

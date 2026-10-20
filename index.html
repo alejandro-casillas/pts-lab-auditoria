@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario de Infraestructura — Preparatoria Tonalá Sur</title>
+  <meta name="description" content="Sistema de auditoría e inventario físico de infraestructura tecnológica y protección eléctrica de los laboratorios de cómputo de la Preparatoria Tonalá Sur.">
+  <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+  <div id="app" class="app-container">
+    <!-- Header Institucional -->
+    <header class="app-header">
+      <div class="header-inner">
+        <div class="header-brand">
+          <div class="badge-tag">Auditoría de TI</div>
+          <h1 class="header-title">Inventario de Infraestructura</h1>
+          <p class="header-subtitle">Preparatoria Tonalá Sur &bull; Universidad de Guadalajara</p>
+        </div>
+        <div class="header-meta">
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span class="status-text">Fase 1: Relevamiento y Auditoría Física</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Resumen de Métricas Globales -->
+    <section class="metrics-section" aria-label="Resumen de Infraestructura">
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <span class="metric-label">Total Computadoras</span>
+          <span class="metric-value" id="stat-total-pcs">0</span>
+          <span class="metric-hint">Inventario en 2 laboratorios</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">Laboratorios</span>
+          <span class="metric-value" id="stat-total-labs">0</span>
+          <span class="metric-hint">Espacios de cómputo activos</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">PCs Alumnos</span>
+          <span class="metric-value" id="stat-pcs-alumnos">0</span>
+          <span class="metric-hint">Estaciones de trabajo de estudiantes</span>
+        </div>
+        <div class="metric-card">
+          <span class="metric-label">PCs Docentes</span>
+          <span class="metric-value" id="stat-pcs-docentes">0</span>
+          <span class="metric-hint">Puestos principales (PC00)</span>
+        </div>
+        <div class="metric-card metric-card-ups">
+          <span class="metric-label">UPS APC Estimados</span>
+          <span class="metric-value" id="stat-ups-apc">0</span>
+          <span class="metric-hint">Protección respaldo (2 PCs/unidad)</span>
+        </div>
+        <div class="metric-card metric-card-volteck">
+          <span class="metric-label">Reguladores Volteck</span>
+          <span class="metric-value" id="stat-reg-volteck">0</span>
+          <span class="metric-hint">Regulación de voltaje (2 PCs/unidad)</span>
+        </div>
+      </div>
+
+      <!-- Barra Comparativa por Laboratorio -->
+      <div class="comparative-card">
+        <div class="comparative-header">
+          <h2 class="section-title">Distribución de Equipos por Laboratorio</h2>
+          <span class="comparative-total" id="comparative-total-label">74 computadoras</span>
+        </div>
+        <div class="comparative-bar-wrapper">
+          <div class="comparative-bar-track">
+            <div class="bar-segment bar-segment-a" id="bar-lab-a" style="width: 55.4%;">
+              <span class="bar-tag">LAB A &bull; <strong id="bar-count-a">41</strong></span>
+            </div>
+            <div class="bar-segment bar-segment-b" id="bar-lab-b" style="width: 44.6%;">
+              <span class="bar-tag">LAB B &bull; <strong id="bar-count-b">33</strong></span>
+            </div>
+          </div>
+        </div>
+        <div class="comparative-legend">
+          <div class="legend-item">
+            <span class="legend-swatch swatch-lab-a"></span>
+            <span><strong>Laboratorio A:</strong> 40 alumnos + 1 docente (41 PCs) &bull; 20 UPS APC</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-swatch swatch-lab-b"></span>
+            <span><strong>Laboratorio B:</strong> 32 alumnos + 1 docente (33 PCs) &bull; 8 Reguladores + 8 UPS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Área de Trabajo Principal: Selector, Plano y Detalle -->
+    <main class="main-content">
+      <!-- Selector de Laboratorio -->
+      <div class="workspace-nav">
+        <div class="tab-group" role="tablist" aria-label="Seleccionar Laboratorio">
+          <button type="button" role="tab" id="tab-lab-a" class="tab-btn active" aria-selected="true" data-lab="LAB-A">
+            <span class="tab-badge">A</span>
+            <span class="tab-info">
+              <span class="tab-title">Laboratorio A</span>
+              <span class="tab-desc">41 PCs &bull; 5 filas &bull; Protección UPS APC</span>
+            </span>
+          </button>
+          <button type="button" role="tab" id="tab-lab-b" class="tab-btn" aria-selected="false" data-lab="LAB-B">
+            <span class="tab-badge">B</span>
+            <span class="tab-info">
+              <span class="tab-title">Laboratorio B</span>
+              <span class="tab-desc">33 PCs &bull; 4 filas &bull; Volteck & UPS (Provisional)</span>
+            </span>
+          </button>
+        </div>
+
+        <!-- Leyenda Eléctrica -->
+        <div class="layout-legend" aria-label="Leyenda de protección eléctrica">
+          <div class="legend-chip chip-ups">
+            <span class="indicator-dot dot-ups"></span>
+            <span>UPS APC (Batería y respaldo)</span>
+          </div>
+          <div class="legend-chip chip-volteck">
+            <span class="indicator-dot dot-volteck"></span>
+            <span>Regulador Volteck</span>
+          </div>
+          <div class="legend-chip chip-provisional">
+            <span class="badge-provisional-pill">Provisional</span>
+            <span>Distribución sujeta a verificación</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notificación Provisional (Condicional LAB B) -->
+      <div id="provisional-banner" class="alert-banner" role="alert" style="display: none;">
+        <div class="alert-icon" aria-hidden="true">⚠️</div>
+        <div class="alert-body">
+          <h3 class="alert-title">Distribución eléctrica provisional en Laboratorio B</h3>
+          <p class="alert-text">
+            Aún no se cuenta con la ubicación exacta por fila de los reguladores Volteck y los UPS APC en este laboratorio. Se muestra una asignación provisional modelada (Filas 1 y 2 con Volteck, Filas 3 y 4 con UPS APC). Esta distribución será confirmada durante la auditoría física en sitio.
+          </p>
+        </div>
+      </div>
+
+      <!-- Plano Interactivo + Panel Lateral de Detalle -->
+      <div class="workspace-grid">
+        <!-- Plano del Laboratorio -->
+        <section class="floorplan-container" aria-label="Plano de distribución física">
+          <div class="floorplan-header">
+            <div class="floorplan-title-wrapper">
+              <h2 class="floorplan-heading" id="current-lab-title">Laboratorio A</h2>
+              <span class="floorplan-subheading" id="current-lab-subtitle">Plano arquitectónico de estaciones de cómputo</span>
+            </div>
+            <div class="floorplan-actions">
+              <button type="button" class="btn-clear-selection" id="btn-clear-selection" title="Desmarcar equipo seleccionado">
+                Deseleccionar
+              </button>
+            </div>
+          </div>
+
+          <!-- Lienzo / Distribución de la Sala -->
+          <div class="room-canvas">
+            <!-- Zona Frontal: Docente y Entrada -->
+            <div class="front-stage">
+              <div class="stage-boundary">
+                <span class="boundary-label">FRENTE / PIZARRÓN</span>
+              </div>
+              <div class="front-layout">
+                <div class="docente-station-wrapper">
+                  <div class="station-meta-label">Estación Docente</div>
+                  <div id="docente-slot" class="docente-slot">
+                    <!-- Inyectado por JS -->
+                  </div>
+                </div>
+                <div class="door-boundary" title="Puerta de acceso al laboratorio">
+                  <div class="door-icon" aria-hidden="true">🚪</div>
+                  <div class="door-label">
+                    <span>ACCESO</span>
+                    <span class="door-sub">Entrada Principal</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cabecera de Columnas -->
+            <div class="columns-header">
+              <div class="col-title col-title-left">Sección Izquierda (4 PCs / fila)</div>
+              <div class="aisle-header">PASILLO CENTRAL</div>
+              <div class="col-title col-title-right">Sección Derecha (4 PCs / fila)</div>
+            </div>
+
+            <!-- Filas de Alumnos -->
+            <div id="rows-container" class="rows-container">
+              <!-- Inyectado por JS -->
+            </div>
+
+            <!-- Fondo del Laboratorio -->
+            <div class="rear-stage">
+              <span class="boundary-label">PARTE POSTERIOR DEL LABORATORIO</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Panel Lateral de Información y Detalle -->
+        <aside class="detail-sidebar" aria-label="Panel de información de estación seleccionada">
+          <div class="detail-card">
+            <div class="detail-card-header">
+              <h3 class="detail-header-title">Detalle del Equipo</h3>
+              <span class="badge-role" id="detail-role-badge">Selección</span>
+            </div>
+
+            <div id="detail-empty-state" class="empty-state">
+              <div class="empty-icon" aria-hidden="true">🖥️</div>
+              <h4 class="empty-title">Ningún equipo seleccionado</h4>
+              <p class="empty-desc">Haz clic en cualquier computadora del plano interactivo para examinar su ubicación, fila, sección y dispositivo de protección eléctrica asignado.</p>
+            </div>
+
+            <div id="detail-content" class="detail-content" style="display: none;">
+              <!-- Identificador Principal -->
+              <div class="pc-hero">
+                <div class="pc-hero-badge" id="detail-pc-id">PC01</div>
+                <div class="pc-hero-meta">
+                  <span class="pc-hero-lab" id="detail-pc-lab">Laboratorio A</span>
+                  <span class="pc-hero-status" id="detail-pc-status">Estación verificada</span>
+                </div>
+              </div>
+
+              <!-- Atributos -->
+              <dl class="specs-list">
+                <div class="spec-row">
+                  <dt class="spec-dt">Laboratorio:</dt>
+                  <dd class="spec-dd" id="detail-spec-lab">Laboratorio A (LAB-A)</dd>
+                </div>
+                <div class="spec-row">
+                  <dt class="spec-dt">Fila / Ubicación:</dt>
+                  <dd class="spec-dd" id="detail-spec-row">Fila 1 (F1)</dd>
+                </div>
+                <div class="spec-row">
+                  <dt class="spec-dt">Sección:</dt>
+                  <dd class="spec-dd" id="detail-spec-section">Sección Izquierda</dd>
+                </div>
+                <div class="spec-row">
+                  <dt class="spec-dt">Posición en hilera:</dt>
+                  <dd class="spec-dd" id="detail-spec-position">Puesto 1</dd>
+                </div>
+                <div class="spec-row">
+                  <dt class="spec-dt">Tipo de usuario:</dt>
+                  <dd class="spec-dd" id="detail-spec-role">Alumno</dd>
+                </div>
+              </dl>
+
+              <!-- Protección Eléctrica -->
+              <div class="protection-box" id="detail-protection-box">
+                <div class="protection-header">
+                  <div class="protection-type-icon" id="detail-protection-icon" aria-hidden="true">🔋</div>
+                  <div>
+                    <h4 class="protection-title" id="detail-protection-name">UPS APC</h4>
+                    <span class="protection-device-id" id="detail-protection-id">Dispositivo: UPS-A-01</span>
+                  </div>
+                </div>
+                <div class="protection-details">
+                  <p class="protection-rel" id="detail-protection-paired">
+                    <strong>Pareja de carga:</strong> Comparte este dispositivo con <button type="button" class="btn-paired-jump" id="btn-paired-jump">PC02</button>
+                  </p>
+                  <div id="detail-provisional-note" class="provisional-warning" style="display: none;">
+                    <strong>Nota provisional:</strong> <span id="detail-provisional-text">Asignación provisional sujeta a confirmación en visita física.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="detail-actions">
+                <button type="button" class="btn-action-outline" id="btn-copy-info">
+                  Copiar Ficha Técnica
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Resumen Rápido del Laboratorio Actual -->
+          <div class="lab-summary-card">
+            <h4 class="lab-summary-title">Resumen de este laboratorio</h4>
+            <ul class="lab-summary-list" id="current-lab-summary-list">
+              <!-- Inyectado por JS -->
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- Footer Institucional -->
+    <footer class="app-footer">
+      <div class="footer-inner">
+        <p>&copy; 2026 Preparatoria Tonalá Sur &bull; Universidad de Guadalajara</p>
+        <p class="footer-subtitle">Sistema de Auditoría e Inventario Físico de Laboratorios &bull; Versión 1.0.0 Autónomo</p>
+      </div>
+    </footer>
+  </div>
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

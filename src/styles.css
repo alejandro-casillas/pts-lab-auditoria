@@ -1,0 +1,1090 @@
+/* ==========================================================================
+   INVENTARIO DE INFRAESTRUCTURA — PREPARATORIA TONALÁ SUR
+   Hoja de estilos principal: Minimalista, Institucional, Moderna y Accesible
+   ========================================================================== */
+
+:root {
+  /* Paleta cromática institucional */
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f1f5f9;
+  --color-surface-active: #e2e8f0;
+  
+  --color-border: #e2e8f0;
+  --color-border-subtle: #edf2f7;
+  --color-border-hover: #cbd5e1;
+  --color-border-focus: #3b82f6;
+
+  --color-text-main: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748b;
+  --color-text-subtle: #94a3b8;
+
+  /* Colores discretos según especificación */
+  /* Azul para UPS APC */
+  --color-ups-bg: #eff6ff;
+  --color-ups-border: #93c5fd;
+  --color-ups-text: #1e40af;
+  --color-ups-accent: #2563eb;
+  --color-ups-glow: rgba(37, 99, 235, 0.15);
+
+  /* Verde para Reguladores Volteck */
+  --color-volteck-bg: #f0fdf4;
+  --color-volteck-border: #86efac;
+  --color-volteck-text: #166534;
+  --color-volteck-accent: #16a34a;
+  --color-volteck-glow: rgba(22, 163, 74, 0.15);
+
+  /* Docente / Neutro / Alertas */
+  --color-docente-bg: #f5f3ff;
+  --color-docente-border: #c4b5fd;
+  --color-docente-text: #5b21b6;
+  --color-docente-accent: #7c3aed;
+
+  --color-warning-bg: #fffbeb;
+  --color-warning-border: #fef08a;
+  --color-warning-text: #854d0e;
+  --color-warning-accent: #d97706;
+
+  /* Tipografía */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Espaciado y radios */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Reset y caja */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Contenedor general */
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ==========================================================================
+   Header Institucional
+   ========================================================================== */
+.app-header {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.badge-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-ups-accent);
+  background-color: var(--color-ups-bg);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.35rem;
+}
+
+.header-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  letter-spacing: -0.02em;
+}
+
+.header-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+}
+
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: 0.825rem;
+  color: var(--color-text-secondary);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #10b981;
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   Métricas y Estadísticas
+   ========================================================================== */
+.metrics-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.metric-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-subtle);
+  transition: border-color 0.15s ease;
+}
+
+.metric-card:hover {
+  border-color: var(--color-border-hover);
+}
+
+.metric-card-ups {
+  border-left: 4px solid var(--color-ups-accent);
+}
+
+.metric-card-volteck {
+  border-left: 4px solid var(--color-volteck-accent);
+}
+
+.metric-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  line-height: 1.1;
+  font-family: var(--font-mono);
+}
+
+.metric-hint {
+  font-size: 0.775rem;
+  color: var(--color-text-muted);
+  margin-top: 0.4rem;
+}
+
+/* Comparativa de Laboratorios */
+.comparative-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.comparative-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.85rem;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.comparative-total {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.comparative-bar-wrapper {
+  margin-bottom: 0.85rem;
+}
+
+.comparative-bar-track {
+  height: 28px;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-sm);
+  display: flex;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.bar-segment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: width 0.3s ease;
+}
+
+.bar-segment-a {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.bar-segment-b {
+  background-color: #64748b;
+  color: #ffffff;
+}
+
+.bar-tag {
+  white-space: nowrap;
+  padding: 0 0.5rem;
+}
+
+.comparative-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-size: 0.825rem;
+  color: var(--color-text-secondary);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.swatch-lab-a { background-color: #3b82f6; }
+.swatch-lab-b { background-color: #64748b; }
+
+/* ==========================================================================
+   Navegación / Tabs y Leyenda de Plano
+   ========================================================================== */
+.workspace-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.tab-group {
+  display: flex;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.25rem;
+  gap: 0.25rem;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.tab-btn:hover {
+  background-color: var(--color-bg);
+}
+
+.tab-btn.active {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-subtle);
+}
+
+.tab-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-bg);
+  color: var(--color-text-secondary);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.tab-btn.active .tab-badge {
+  background-color: var(--color-text-main);
+  color: #ffffff;
+}
+
+.tab-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+}
+
+.tab-desc {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.layout-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.legend-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  font-size: 0.775rem;
+  color: var(--color-text-secondary);
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-ups {
+  background-color: var(--color-ups-accent);
+}
+
+.dot-volteck {
+  background-color: var(--color-volteck-accent);
+}
+
+.badge-provisional-pill {
+  background-color: var(--color-warning-bg);
+  border: 1px solid var(--color-warning-border);
+  color: var(--color-warning-text);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--radius-sm);
+}
+
+/* Alerta de Datos Provisionales */
+.alert-banner {
+  background-color: var(--color-warning-bg);
+  border: 1px solid var(--color-warning-border);
+  border-left: 4px solid var(--color-warning-accent);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+}
+
+.alert-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.alert-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-warning-text);
+  margin-bottom: 0.25rem;
+}
+
+.alert-text {
+  font-size: 0.825rem;
+  color: #713f12;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   Plano Interactivo y Distribución
+   ========================================================================== */
+.workspace-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.floorplan-container {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-subtle);
+  overflow-x: auto;
+}
+
+.floorplan-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: 1rem;
+}
+
+.floorplan-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.floorplan-subheading {
+  font-size: 0.825rem;
+  color: var(--color-text-muted);
+}
+
+.btn-clear-selection {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-secondary);
+  font-size: 0.775rem;
+  font-weight: 500;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn-clear-selection:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-border-hover);
+  color: var(--color-text-main);
+}
+
+/* Lienzo de la Sala */
+.room-canvas {
+  min-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: #fafbfc;
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+/* Frente: Pizarrón, Docente y Entrada */
+.front-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stage-boundary {
+  text-align: center;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.25rem;
+}
+
+.boundary-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+}
+
+.front-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.docente-station-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.station-meta-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.door-boundary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px dashed #94a3b8;
+  border-radius: var(--radius-sm);
+  background-color: #f8fafc;
+}
+
+.door-icon {
+  font-size: 1.2rem;
+}
+
+.door-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  line-height: 1.1;
+}
+
+.door-sub {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+/* Cabecera de Pasillos */
+.columns-header {
+  display: grid;
+  grid-template-columns: 1fr 100px 1fr;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0;
+}
+
+.aisle-header {
+  color: var(--color-text-subtle);
+  font-size: 0.7rem;
+}
+
+/* Contenedor de Filas */
+.rows-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.row-wrapper {
+  display: grid;
+  grid-template-columns: 48px 1fr 100px 1fr;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.6rem 0.85rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.row-tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  text-align: center;
+  padding: 0.35rem 0.2rem;
+  font-family: var(--font-mono);
+}
+
+.stations-section {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+/* Agrupación en parejas de carga */
+.pc-pair {
+  display: flex;
+  gap: 0.35rem;
+  padding: 0.2rem;
+  border-radius: var(--radius-sm);
+  background-color: rgba(241, 245, 249, 0.4);
+  border: 1px dotted var(--color-border);
+  position: relative;
+}
+
+.pc-pair::after {
+  content: "⚡";
+  position: absolute;
+  top: -7px;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 8px;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.aisle-corridor {
+  text-align: center;
+  font-size: 0.7rem;
+  color: var(--color-text-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px dashed var(--color-border);
+  border-right: 1px dashed var(--color-border);
+  height: 100%;
+  user-select: none;
+}
+
+/* Botones de Computadora */
+.pc-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+  padding: 0.2rem;
+  position: relative;
+}
+
+.pc-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.pc-btn:focus-visible {
+  outline: 2px solid var(--color-border-focus);
+  outline-offset: 2px;
+}
+
+.pc-id {
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  line-height: 1.1;
+}
+
+.pc-sub {
+  font-size: 0.65rem;
+  font-weight: 500;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* Estilos según Protección Eléctrica */
+.pc-ups {
+  background-color: var(--color-ups-bg);
+  border-color: var(--color-ups-border);
+  color: var(--color-ups-text);
+}
+
+.pc-ups:hover {
+  border-color: var(--color-ups-accent);
+}
+
+.pc-volteck {
+  background-color: var(--color-volteck-bg);
+  border-color: var(--color-volteck-border);
+  color: var(--color-volteck-text);
+}
+
+.pc-volteck:hover {
+  border-color: var(--color-volteck-accent);
+}
+
+.pc-docente {
+  width: 72px;
+  height: 54px;
+  background-color: var(--color-docente-bg);
+  border-color: var(--color-docente-border);
+  color: var(--color-docente-text);
+}
+
+/* Estado Seleccionado */
+.pc-btn.selected {
+  outline: 2px solid var(--color-text-main);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.15);
+  font-weight: 800;
+}
+
+/* Parte posterior */
+.rear-stage {
+  text-align: center;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.5rem;
+}
+
+/* ==========================================================================
+   Panel Lateral de Detalle
+   ========================================================================== */
+.detail-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detail-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.detail-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: 0.75rem;
+}
+
+.detail-header-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.badge-role {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.empty-icon {
+  font-size: 2.25rem;
+  margin-bottom: 0.75rem;
+  opacity: 0.7;
+}
+
+.empty-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  margin-bottom: 0.35rem;
+}
+
+.empty-desc {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Vista del equipo seleccionado */
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pc-hero {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.pc-hero-badge {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.35rem 0.75rem;
+  color: var(--color-text-main);
+}
+
+.pc-hero-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.pc-hero-lab {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+
+.pc-hero-status {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+/* Especificaciones */
+.specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.825rem;
+  padding: 0.25rem 0;
+  border-bottom: 1px dotted var(--color-border-subtle);
+}
+
+.spec-dt {
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.spec-dd {
+  color: var(--color-text-main);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Caja de Protección Eléctrica en Detalle */
+.protection-box {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+}
+
+.protection-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.6rem;
+}
+
+.protection-type-icon {
+  font-size: 1.4rem;
+}
+
+.protection-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  line-height: 1.2;
+}
+
+.protection-device-id {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  color: var(--color-text-muted);
+}
+
+.protection-details {
+  font-size: 0.775rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+.protection-rel {
+  margin-bottom: 0.5rem;
+}
+
+.btn-paired-jump {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-main);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.15rem 0.4rem;
+  cursor: pointer;
+  margin-left: 0.25rem;
+}
+
+.btn-paired-jump:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-border-hover);
+}
+
+.provisional-warning {
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.65rem;
+  background-color: var(--color-warning-bg);
+  border: 1px solid var(--color-warning-border);
+  border-radius: var(--radius-sm);
+  font-size: 0.725rem;
+  color: var(--color-warning-text);
+  line-height: 1.35;
+}
+
+.detail-actions {
+  margin-top: 0.25rem;
+}
+
+.btn-action-outline {
+  width: 100%;
+  padding: 0.5rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-main);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.btn-action-outline:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-border-hover);
+}
+
+/* Card Resumen de Laboratorio Activo */
+.lab-summary-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.15rem;
+  box-shadow: var(--shadow-subtle);
+}
+
+.lab-summary-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.lab-summary-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+}
+
+.lab-summary-list li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px dotted var(--color-border-subtle);
+  padding-bottom: 0.25rem;
+}
+
+.lab-summary-list strong {
+  color: var(--color-text-main);
+  font-family: var(--font-mono);
+}
+
+/* ==========================================================================
+   Footer Institucional
+   ========================================================================== */
+.app-footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.footer-subtitle {
+  font-size: 0.725rem;
+  color: var(--color-text-subtle);
+  margin-top: 0.25rem;
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .workspace-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .workspace-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tab-group {
+    flex-direction: column;
+  }
+}
