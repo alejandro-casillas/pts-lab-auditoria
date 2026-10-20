@@ -16,9 +16,16 @@
           "dispositivoId": "TOMA-DIRECTA-A",
           "nombre": "Toma directa / Sin UPS",
           "compartidoCon": null,
-          "provisional": true,
+          "provisional": false,
           "nota": "No asignada a los 20 UPS de alumnos."
-        }
+        },
+        "operativo": {
+          "estado": "habilitada",
+          "alimentacion": true,
+          "redLan": true,
+          "motivoInhabilitacion": null
+        },
+        "extensionElectrica": null
       },
       "filas": [
         {
@@ -26,7 +33,7 @@
           "id": "F1",
           "izquierda": [
             {
-              "id": "PC01",
+              "id": "PC08",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F1",
@@ -36,12 +43,19 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-01",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC02",
+                "compartidoCon": "PC07",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
-              "id": "PC02",
+              "id": "PC07",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F1",
@@ -51,8 +65,101 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-01",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC01",
+                "compartidoCon": "PC08",
                 "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
+            },
+            {
+              "id": "PC06",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F1",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-02",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC05",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-01",
+                "verificacionFisica": "pendiente"
+              }
+            },
+            {
+              "id": "PC05",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F1",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-02",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC06",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-01",
+                "verificacionFisica": "pendiente"
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC04",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F1",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-03",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC03",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-02",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -60,65 +167,31 @@
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F1",
-              "seccion": "Izquierda",
-              "posicion": 3,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-02",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC04",
-                "provisional": false
-              }
-            },
-            {
-              "id": "PC04",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F1",
-              "seccion": "Izquierda",
-              "posicion": 4,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-02",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC03",
-                "provisional": false
-              }
-            }
-          ],
-          "derecha": [
-            {
-              "id": "PC05",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F1",
-              "seccion": "Derecha",
-              "posicion": 1,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-03",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC06",
-                "provisional": false
-              }
-            },
-            {
-              "id": "PC06",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F1",
               "seccion": "Derecha",
               "posicion": 2,
               "proteccion": {
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-03",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC05",
+                "compartidoCon": "PC04",
                 "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-02",
+                "verificacionFisica": "pendiente"
               }
             },
             {
-              "id": "PC07",
+              "id": "PC02",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F1",
@@ -128,12 +201,19 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-04",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC08",
+                "compartidoCon": "PC01",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
-              "id": "PC08",
+              "id": "PC01",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F1",
@@ -143,9 +223,16 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-04",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC07",
+                "compartidoCon": "PC02",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             }
           ]
         },
@@ -154,7 +241,7 @@
           "id": "F2",
           "izquierda": [
             {
-              "id": "PC09",
+              "id": "PC16",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F2",
@@ -164,12 +251,19 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-05",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC10",
+                "compartidoCon": "PC15",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
-              "id": "PC10",
+              "id": "PC15",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F2",
@@ -179,8 +273,101 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-05",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC09",
+                "compartidoCon": "PC16",
                 "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
+            },
+            {
+              "id": "PC14",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F2",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-06",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC13",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-03",
+                "verificacionFisica": "pendiente"
+              }
+            },
+            {
+              "id": "PC13",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F2",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-06",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC14",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-03",
+                "verificacionFisica": "pendiente"
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC12",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F2",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-07",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC11",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-04",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -188,65 +375,31 @@
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F2",
-              "seccion": "Izquierda",
-              "posicion": 3,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-06",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC12",
-                "provisional": false
-              }
-            },
-            {
-              "id": "PC12",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F2",
-              "seccion": "Izquierda",
-              "posicion": 4,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-06",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC11",
-                "provisional": false
-              }
-            }
-          ],
-          "derecha": [
-            {
-              "id": "PC13",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F2",
-              "seccion": "Derecha",
-              "posicion": 1,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-07",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC14",
-                "provisional": false
-              }
-            },
-            {
-              "id": "PC14",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F2",
               "seccion": "Derecha",
               "posicion": 2,
               "proteccion": {
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-07",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC13",
+                "compartidoCon": "PC12",
                 "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-04",
+                "verificacionFisica": "pendiente"
               }
             },
             {
-              "id": "PC15",
+              "id": "PC10",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F2",
@@ -256,12 +409,19 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-08",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC16",
+                "compartidoCon": "PC09",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
-              "id": "PC16",
+              "id": "PC09",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F2",
@@ -271,9 +431,16 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-08",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC15",
+                "compartidoCon": "PC10",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             }
           ]
         },
@@ -282,7 +449,7 @@
           "id": "F3",
           "izquierda": [
             {
-              "id": "PC17",
+              "id": "PC24",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F3",
@@ -292,12 +459,19 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-09",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC18",
+                "compartidoCon": "PC23",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
-              "id": "PC18",
+              "id": "PC23",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F3",
@@ -307,8 +481,101 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-09",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC17",
+                "compartidoCon": "PC24",
                 "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
+            },
+            {
+              "id": "PC22",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F3",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-10",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC21",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-05",
+                "verificacionFisica": "pendiente"
+              }
+            },
+            {
+              "id": "PC21",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F3",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-10",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC22",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-05",
+                "verificacionFisica": "pendiente"
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC20",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F3",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-11",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC19",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-06",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -316,65 +583,31 @@
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F3",
-              "seccion": "Izquierda",
-              "posicion": 3,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-10",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC20",
-                "provisional": false
-              }
-            },
-            {
-              "id": "PC20",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F3",
-              "seccion": "Izquierda",
-              "posicion": 4,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-10",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC19",
-                "provisional": false
-              }
-            }
-          ],
-          "derecha": [
-            {
-              "id": "PC21",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F3",
-              "seccion": "Derecha",
-              "posicion": 1,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-11",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC22",
-                "provisional": false
-              }
-            },
-            {
-              "id": "PC22",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F3",
               "seccion": "Derecha",
               "posicion": 2,
               "proteccion": {
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-11",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC21",
+                "compartidoCon": "PC20",
                 "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-06",
+                "verificacionFisica": "pendiente"
               }
             },
             {
-              "id": "PC23",
+              "id": "PC18",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F3",
@@ -384,12 +617,19 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-12",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC24",
+                "compartidoCon": "PC17",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
-              "id": "PC24",
+              "id": "PC17",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F3",
@@ -399,9 +639,16 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-12",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC23",
+                "compartidoCon": "PC18",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             }
           ]
         },
@@ -410,7 +657,7 @@
           "id": "F4",
           "izquierda": [
             {
-              "id": "PC25",
+              "id": "PC32",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F4",
@@ -420,12 +667,19 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-13",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC26",
+                "compartidoCon": "PC31",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
-              "id": "PC26",
+              "id": "PC31",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F4",
@@ -435,8 +689,101 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-13",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC25",
+                "compartidoCon": "PC32",
                 "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
+            },
+            {
+              "id": "PC30",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F4",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-14",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC29",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-07",
+                "verificacionFisica": "pendiente"
+              }
+            },
+            {
+              "id": "PC29",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F4",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-14",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC30",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-07",
+                "verificacionFisica": "pendiente"
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC28",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F4",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-15",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC27",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-08",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -444,65 +791,31 @@
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F4",
-              "seccion": "Izquierda",
-              "posicion": 3,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-14",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC28",
-                "provisional": false
-              }
-            },
-            {
-              "id": "PC28",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F4",
-              "seccion": "Izquierda",
-              "posicion": 4,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-14",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC27",
-                "provisional": false
-              }
-            }
-          ],
-          "derecha": [
-            {
-              "id": "PC29",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F4",
-              "seccion": "Derecha",
-              "posicion": 1,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-15",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC30",
-                "provisional": false
-              }
-            },
-            {
-              "id": "PC30",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F4",
               "seccion": "Derecha",
               "posicion": 2,
               "proteccion": {
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-15",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC29",
+                "compartidoCon": "PC28",
                 "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-08",
+                "verificacionFisica": "pendiente"
               }
             },
             {
-              "id": "PC31",
+              "id": "PC26",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F4",
@@ -512,12 +825,19 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-16",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC32",
+                "compartidoCon": "PC25",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
-              "id": "PC32",
+              "id": "PC25",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F4",
@@ -527,9 +847,16 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-16",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC31",
+                "compartidoCon": "PC26",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             }
           ]
         },
@@ -538,7 +865,7 @@
           "id": "F5",
           "izquierda": [
             {
-              "id": "PC33",
+              "id": "PC40",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F5",
@@ -548,12 +875,19 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-17",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC34",
+                "compartidoCon": "PC39",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
-              "id": "PC34",
+              "id": "PC39",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F5",
@@ -563,8 +897,101 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-17",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC33",
+                "compartidoCon": "PC40",
                 "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
+            },
+            {
+              "id": "PC38",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F5",
+              "seccion": "Izquierda",
+              "posicion": 3,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-18",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC37",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-09",
+                "verificacionFisica": "pendiente"
+              }
+            },
+            {
+              "id": "PC37",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F5",
+              "seccion": "Izquierda",
+              "posicion": 4,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-18",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC38",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-09",
+                "verificacionFisica": "pendiente"
+              }
+            }
+          ],
+          "derecha": [
+            {
+              "id": "PC36",
+              "rol": "alumno",
+              "laboratorio": "LAB-A",
+              "fila": "F5",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "proteccion": {
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-A-19",
+                "nombre": "UPS APC",
+                "compartidoCon": "PC35",
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-10",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -572,65 +999,31 @@
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F5",
-              "seccion": "Izquierda",
-              "posicion": 3,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-18",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC36",
-                "provisional": false
-              }
-            },
-            {
-              "id": "PC36",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F5",
-              "seccion": "Izquierda",
-              "posicion": 4,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-18",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC35",
-                "provisional": false
-              }
-            }
-          ],
-          "derecha": [
-            {
-              "id": "PC37",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F5",
-              "seccion": "Derecha",
-              "posicion": 1,
-              "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-A-19",
-                "nombre": "UPS APC",
-                "compartidoCon": "PC38",
-                "provisional": false
-              }
-            },
-            {
-              "id": "PC38",
-              "rol": "alumno",
-              "laboratorio": "LAB-A",
-              "fila": "F5",
               "seccion": "Derecha",
               "posicion": 2,
               "proteccion": {
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-19",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC37",
+                "compartidoCon": "PC36",
                 "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-A-10",
+                "verificacionFisica": "pendiente"
               }
             },
             {
-              "id": "PC39",
+              "id": "PC34",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F5",
@@ -640,12 +1033,19 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-20",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC40",
+                "compartidoCon": "PC33",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
-              "id": "PC40",
+              "id": "PC33",
               "rol": "alumno",
               "laboratorio": "LAB-A",
               "fila": "F5",
@@ -655,9 +1055,16 @@
                 "tipo": "ups_apc",
                 "dispositivoId": "UPS-A-20",
                 "nombre": "UPS APC",
-                "compartidoCon": "PC39",
+                "compartidoCon": "PC34",
                 "provisional": false
-              }
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             }
           ]
         }
@@ -677,11 +1084,119 @@
           "dispositivoId": "TOMA-DIRECTA-B",
           "nombre": "Toma directa / Sin UPS",
           "compartidoCon": null,
-          "provisional": true,
+          "provisional": false,
           "nota": "No asignada a los 8 reguladores ni a los 8 UPS de alumnos."
-        }
+        },
+        "operativo": {
+          "estado": "habilitada",
+          "alimentacion": true,
+          "redLan": true,
+          "motivoInhabilitacion": null
+        },
+        "extensionElectrica": null
       },
       "filas": [
+        {
+          "filaNumero": 0,
+          "id": "F0",
+          "tipoFila": "ampliacion",
+          "descripcion": "Fila de ampliación física",
+          "izquierda": [
+            {
+              "tipo": "vacio",
+              "id": "LAB-B-V01",
+              "puesto": 1,
+              "seccion": "Izquierda",
+              "fila": "F0",
+              "laboratorio": "LAB-B"
+            },
+            {
+              "tipo": "vacio",
+              "id": "LAB-B-V02",
+              "puesto": 2,
+              "seccion": "Izquierda",
+              "fila": "F0",
+              "laboratorio": "LAB-B"
+            },
+            {
+              "tipo": "vacio",
+              "id": "LAB-B-V03",
+              "puesto": 3,
+              "seccion": "Izquierda",
+              "fila": "F0",
+              "laboratorio": "LAB-B"
+            },
+            {
+              "tipo": "vacio",
+              "id": "LAB-B-V04",
+              "puesto": 4,
+              "seccion": "Izquierda",
+              "fila": "F0",
+              "laboratorio": "LAB-B"
+            }
+          ],
+          "derecha": [
+            {
+              "tipo": "computadora",
+              "id": "LAB-B-EX01",
+              "rol": "ampliacion",
+              "laboratorio": "LAB-B",
+              "fila": "F0",
+              "seccion": "Derecha",
+              "posicion": 1,
+              "operativo": {
+                "estado": "inhabilitada",
+                "alimentacion": false,
+                "redLan": false,
+                "motivoInhabilitacion": "Falta de infraestructura eléctrica y de red"
+              },
+              "proteccion": null,
+              "extensionElectrica": null
+            },
+            {
+              "tipo": "computadora",
+              "id": "LAB-B-EX02",
+              "rol": "ampliacion",
+              "laboratorio": "LAB-B",
+              "fila": "F0",
+              "seccion": "Derecha",
+              "posicion": 2,
+              "operativo": {
+                "estado": "inhabilitada",
+                "alimentacion": false,
+                "redLan": false,
+                "motivoInhabilitacion": "Falta de infraestructura eléctrica y de red"
+              },
+              "proteccion": null,
+              "extensionElectrica": null
+            },
+            {
+              "tipo": "computadora",
+              "id": "LAB-B-EX03",
+              "rol": "ampliacion",
+              "laboratorio": "LAB-B",
+              "fila": "F0",
+              "seccion": "Derecha",
+              "posicion": 3,
+              "operativo": {
+                "estado": "inhabilitada",
+                "alimentacion": false,
+                "redLan": false,
+                "motivoInhabilitacion": "Falta de infraestructura eléctrica y de red"
+              },
+              "proteccion": null,
+              "extensionElectrica": null
+            },
+            {
+              "tipo": "vacio",
+              "id": "LAB-B-V05",
+              "puesto": 4,
+              "seccion": "Derecha",
+              "fila": "F0",
+              "laboratorio": "LAB-B"
+            }
+          ]
+        },
         {
           "filaNumero": 1,
           "id": "F1",
@@ -694,13 +1209,19 @@
               "seccion": "Izquierda",
               "posicion": 1,
               "proteccion": {
-                "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-01",
-                "nombre": "Regulador Volteck",
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-01",
+                "nombre": "UPS APC",
                 "compartidoCon": "PC02",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
               "id": "PC02",
@@ -710,13 +1231,19 @@
               "seccion": "Izquierda",
               "posicion": 2,
               "proteccion": {
-                "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-01",
-                "nombre": "Regulador Volteck",
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-01",
+                "nombre": "UPS APC",
                 "compartidoCon": "PC01",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
               "id": "PC03",
@@ -727,11 +1254,23 @@
               "posicion": 3,
               "proteccion": {
                 "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-02",
+                "dispositivoId": "REG-B-01",
                 "nombre": "Regulador Volteck",
                 "compartidoCon": "PC04",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-01",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -743,11 +1282,23 @@
               "posicion": 4,
               "proteccion": {
                 "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-02",
+                "dispositivoId": "REG-B-01",
                 "nombre": "Regulador Volteck",
                 "compartidoCon": "PC03",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-01",
+                "verificacionFisica": "pendiente"
               }
             }
           ],
@@ -761,11 +1312,23 @@
               "posicion": 1,
               "proteccion": {
                 "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-03",
+                "dispositivoId": "REG-B-02",
                 "nombre": "Regulador Volteck",
                 "compartidoCon": "PC06",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-02",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -777,11 +1340,23 @@
               "posicion": 2,
               "proteccion": {
                 "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-03",
+                "dispositivoId": "REG-B-02",
                 "nombre": "Regulador Volteck",
                 "compartidoCon": "PC05",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-02",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -792,13 +1367,19 @@
               "seccion": "Derecha",
               "posicion": 3,
               "proteccion": {
-                "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-04",
-                "nombre": "Regulador Volteck",
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-02",
+                "nombre": "UPS APC",
                 "compartidoCon": "PC08",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
               "id": "PC08",
@@ -808,13 +1389,19 @@
               "seccion": "Derecha",
               "posicion": 4,
               "proteccion": {
-                "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-04",
-                "nombre": "Regulador Volteck",
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-02",
+                "nombre": "UPS APC",
                 "compartidoCon": "PC07",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             }
           ]
         },
@@ -830,13 +1417,19 @@
               "seccion": "Izquierda",
               "posicion": 1,
               "proteccion": {
-                "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-05",
-                "nombre": "Regulador Volteck",
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-03",
+                "nombre": "UPS APC",
                 "compartidoCon": "PC10",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
               "id": "PC10",
@@ -846,13 +1439,19 @@
               "seccion": "Izquierda",
               "posicion": 2,
               "proteccion": {
-                "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-05",
-                "nombre": "Regulador Volteck",
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-03",
+                "nombre": "UPS APC",
                 "compartidoCon": "PC09",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
               "id": "PC11",
@@ -862,12 +1461,24 @@
               "seccion": "Izquierda",
               "posicion": 3,
               "proteccion": {
-                "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-06",
-                "nombre": "Regulador Volteck",
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-04",
+                "nombre": "UPS APC",
                 "compartidoCon": "PC12",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-03",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -878,12 +1489,24 @@
               "seccion": "Izquierda",
               "posicion": 4,
               "proteccion": {
-                "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-06",
-                "nombre": "Regulador Volteck",
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-04",
+                "nombre": "UPS APC",
                 "compartidoCon": "PC11",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-03",
+                "verificacionFisica": "pendiente"
               }
             }
           ],
@@ -897,11 +1520,23 @@
               "posicion": 1,
               "proteccion": {
                 "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-07",
+                "dispositivoId": "REG-B-03",
                 "nombre": "Regulador Volteck",
                 "compartidoCon": "PC14",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-04",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -913,11 +1548,23 @@
               "posicion": 2,
               "proteccion": {
                 "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-07",
+                "dispositivoId": "REG-B-03",
                 "nombre": "Regulador Volteck",
                 "compartidoCon": "PC13",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-04",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -928,13 +1575,19 @@
               "seccion": "Derecha",
               "posicion": 3,
               "proteccion": {
-                "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-08",
-                "nombre": "Regulador Volteck",
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-05",
+                "nombre": "UPS APC",
                 "compartidoCon": "PC16",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
               "id": "PC16",
@@ -944,13 +1597,19 @@
               "seccion": "Derecha",
               "posicion": 4,
               "proteccion": {
-                "tipo": "regulador_volteck",
-                "dispositivoId": "REG-B-08",
-                "nombre": "Regulador Volteck",
+                "tipo": "ups_apc",
+                "dispositivoId": "UPS-B-05",
+                "nombre": "UPS APC",
                 "compartidoCon": "PC15",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "inhabilitada",
+                "alimentacion": true,
+                "redLan": false,
+                "motivoInhabilitacion": "Puerto de red de pared defectuoso"
+              },
+              "extensionElectrica": null
             }
           ]
         },
@@ -967,12 +1626,18 @@
               "posicion": 1,
               "proteccion": {
                 "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-01",
+                "dispositivoId": "UPS-B-06",
                 "nombre": "UPS APC",
                 "compartidoCon": "PC18",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
               "id": "PC18",
@@ -983,12 +1648,18 @@
               "posicion": 2,
               "proteccion": {
                 "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-01",
+                "dispositivoId": "UPS-B-06",
                 "nombre": "UPS APC",
                 "compartidoCon": "PC17",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
               "id": "PC19",
@@ -998,12 +1669,24 @@
               "seccion": "Izquierda",
               "posicion": 3,
               "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-02",
-                "nombre": "UPS APC",
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-04",
+                "nombre": "Regulador Volteck",
                 "compartidoCon": "PC20",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-05",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -1014,12 +1697,24 @@
               "seccion": "Izquierda",
               "posicion": 4,
               "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-02",
-                "nombre": "UPS APC",
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-04",
+                "nombre": "Regulador Volteck",
                 "compartidoCon": "PC19",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-05",
+                "verificacionFisica": "pendiente"
               }
             }
           ],
@@ -1032,12 +1727,24 @@
               "seccion": "Derecha",
               "posicion": 1,
               "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-03",
-                "nombre": "UPS APC",
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-05",
+                "nombre": "Regulador Volteck",
                 "compartidoCon": "PC22",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-06",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -1048,12 +1755,24 @@
               "seccion": "Derecha",
               "posicion": 2,
               "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-03",
-                "nombre": "UPS APC",
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-05",
+                "nombre": "Regulador Volteck",
                 "compartidoCon": "PC21",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-06",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -1065,12 +1784,18 @@
               "posicion": 3,
               "proteccion": {
                 "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-04",
+                "dispositivoId": "UPS-B-07",
                 "nombre": "UPS APC",
                 "compartidoCon": "PC24",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
               "id": "PC24",
@@ -1081,12 +1806,18 @@
               "posicion": 4,
               "proteccion": {
                 "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-04",
+                "dispositivoId": "UPS-B-07",
                 "nombre": "UPS APC",
                 "compartidoCon": "PC23",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             }
           ]
         },
@@ -1103,12 +1834,18 @@
               "posicion": 1,
               "proteccion": {
                 "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-05",
+                "dispositivoId": "UPS-B-08",
                 "nombre": "UPS APC",
                 "compartidoCon": "PC26",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
               "id": "PC26",
@@ -1119,12 +1856,18 @@
               "posicion": 2,
               "proteccion": {
                 "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-05",
+                "dispositivoId": "UPS-B-08",
                 "nombre": "UPS APC",
                 "compartidoCon": "PC25",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
               "id": "PC27",
@@ -1134,12 +1877,24 @@
               "seccion": "Izquierda",
               "posicion": 3,
               "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-06",
-                "nombre": "UPS APC",
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-06",
+                "nombre": "Regulador Volteck",
                 "compartidoCon": "PC28",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-07",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -1150,12 +1905,24 @@
               "seccion": "Izquierda",
               "posicion": 4,
               "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-06",
-                "nombre": "UPS APC",
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-06",
+                "nombre": "Regulador Volteck",
                 "compartidoCon": "PC27",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-07",
+                "verificacionFisica": "pendiente"
               }
             }
           ],
@@ -1168,12 +1935,24 @@
               "seccion": "Derecha",
               "posicion": 1,
               "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-07",
-                "nombre": "UPS APC",
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-07",
+                "nombre": "Regulador Volteck",
                 "compartidoCon": "PC30",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-08",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -1184,12 +1963,24 @@
               "seccion": "Derecha",
               "posicion": 2,
               "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-07",
-                "nombre": "UPS APC",
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-07",
+                "nombre": "Regulador Volteck",
                 "compartidoCon": "PC29",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": {
+                "requerida": true,
+                "tipo": "extension_reforzada_volteck",
+                "modelo": "Extensión Reforzada Aterrizada Volteck 4m, Calibre 3x14 AWG",
+                "dispositivoId": "EXT-B-08",
+                "verificacionFisica": "pendiente"
               }
             },
             {
@@ -1200,13 +1991,19 @@
               "seccion": "Derecha",
               "posicion": 3,
               "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-08",
-                "nombre": "UPS APC",
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-08",
+                "nombre": "Regulador Volteck",
                 "compartidoCon": "PC32",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             },
             {
               "id": "PC32",
@@ -1216,13 +2013,19 @@
               "seccion": "Derecha",
               "posicion": 4,
               "proteccion": {
-                "tipo": "ups_apc",
-                "dispositivoId": "UPS-B-08",
-                "nombre": "UPS APC",
+                "tipo": "regulador_volteck",
+                "dispositivoId": "REG-B-08",
+                "nombre": "Regulador Volteck",
                 "compartidoCon": "PC31",
-                "provisional": true,
-                "nota": "Distribución provisional: F1-F2 asignadas a Volteck y F3-F4 a UPS APC en espera de verificación física en sitio."
-              }
+                "provisional": false
+              },
+              "operativo": {
+                "estado": "habilitada",
+                "alimentacion": true,
+                "redLan": true,
+                "motivoInhabilitacion": null
+              },
+              "extensionElectrica": null
             }
           ]
         }

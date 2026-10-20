@@ -32,17 +32,22 @@
         <div class="metric-card">
           <span class="metric-label">Total Computadoras</span>
           <span class="metric-value" id="stat-total-pcs">0</span>
-          <span class="metric-hint">Inventario en 2 laboratorios</span>
+          <span class="metric-hint">77 equipos físicos en inventario</span>
         </div>
-        <div class="metric-card">
-          <span class="metric-label">Laboratorios</span>
-          <span class="metric-value" id="stat-total-labs">0</span>
-          <span class="metric-hint">Espacios de cómputo activos</span>
+        <div class="metric-card metric-card-operativo">
+          <span class="metric-label">PCs Habilitadas</span>
+          <span class="metric-value" id="stat-pcs-habilitadas">0</span>
+          <span class="metric-hint">Equipos operativos en servicio</span>
+        </div>
+        <div class="metric-card metric-card-inhabilitado">
+          <span class="metric-label">PCs Inhabilitadas</span>
+          <span class="metric-value" id="stat-pcs-inhabilitadas">0</span>
+          <span class="metric-hint">Requieren atención o infraestructura</span>
         </div>
         <div class="metric-card">
           <span class="metric-label">PCs Alumnos</span>
           <span class="metric-value" id="stat-pcs-alumnos">0</span>
-          <span class="metric-hint">Estaciones de trabajo de estudiantes</span>
+          <span class="metric-hint">72 estaciones de alumnos + 3 ampliación</span>
         </div>
         <div class="metric-card">
           <span class="metric-label">PCs Docentes</span>
@@ -50,14 +55,19 @@
           <span class="metric-hint">Puestos principales (PC00)</span>
         </div>
         <div class="metric-card metric-card-ups">
-          <span class="metric-label">UPS APC Estimados</span>
+          <span class="metric-label">UPS APC</span>
           <span class="metric-value" id="stat-ups-apc">0</span>
-          <span class="metric-hint">Protección respaldo (2 PCs/unidad)</span>
+          <span class="metric-hint">28 unidades en estaciones numeradas</span>
         </div>
         <div class="metric-card metric-card-volteck">
           <span class="metric-label">Reguladores Volteck</span>
           <span class="metric-value" id="stat-reg-volteck">0</span>
-          <span class="metric-hint">Regulación de voltaje (2 PCs/unidad)</span>
+          <span class="metric-hint">8 unidades confirmadas en LAB B</span>
+        </div>
+        <div class="metric-card metric-card-extension">
+          <span class="metric-label">Extensiones Cal. 14</span>
+          <span class="metric-value" id="stat-extensiones">0</span>
+          <span class="metric-hint">18 estimadas en parejas de pasillo</span>
         </div>
       </div>
 
@@ -65,26 +75,26 @@
       <div class="comparative-card">
         <div class="comparative-header">
           <h2 class="section-title">Distribución de Equipos por Laboratorio</h2>
-          <span class="comparative-total" id="comparative-total-label">74 computadoras</span>
+          <span class="comparative-total" id="comparative-total-label">77 computadoras físicas</span>
         </div>
         <div class="comparative-bar-wrapper">
           <div class="comparative-bar-track">
-            <div class="bar-segment bar-segment-a" id="bar-lab-a" style="width: 55.4%;">
-              <span class="bar-tag">LAB A &bull; <strong id="bar-count-a">41</strong></span>
+            <div class="bar-segment bar-segment-a" id="bar-lab-a" style="width: 53.2%;">
+              <span class="bar-tag">LAB A • <strong id="bar-count-a">41</strong></span>
             </div>
-            <div class="bar-segment bar-segment-b" id="bar-lab-b" style="width: 44.6%;">
-              <span class="bar-tag">LAB B &bull; <strong id="bar-count-b">33</strong></span>
+            <div class="bar-segment bar-segment-b" id="bar-lab-b" style="width: 46.8%;">
+              <span class="bar-tag">LAB B • <strong id="bar-count-b">36</strong></span>
             </div>
           </div>
         </div>
         <div class="comparative-legend">
           <div class="legend-item">
             <span class="legend-swatch swatch-lab-a"></span>
-            <span><strong>Laboratorio A:</strong> 40 alumnos + 1 docente (41 PCs) &bull; 20 UPS APC</span>
+            <span><strong>Laboratorio A:</strong> 40 alumnos + 1 docente (41 PCs) • 20 UPS APC • 10 extensiones</span>
           </div>
           <div class="legend-item">
             <span class="legend-swatch swatch-lab-b"></span>
-            <span><strong>Laboratorio B:</strong> 32 alumnos + 1 docente (33 PCs) &bull; 8 Reguladores + 8 UPS</span>
+            <span><strong>Laboratorio B:</strong> 32 alumnos + 1 docente + 3 ampliación F0 (36 PCs) • 8 Volteck + 8 UPS • 8 extensiones</span>
           </div>
         </div>
       </div>
@@ -99,31 +109,39 @@
             <span class="tab-badge">A</span>
             <span class="tab-info">
               <span class="tab-title">Laboratorio A</span>
-              <span class="tab-desc">41 PCs &bull; 5 filas &bull; Protección UPS APC</span>
+              <span class="tab-desc">41 PCs • 5 filas • UPS APC</span>
             </span>
           </button>
           <button type="button" role="tab" id="tab-lab-b" class="tab-btn" aria-selected="false" data-lab="LAB-B">
             <span class="tab-badge">B</span>
             <span class="tab-info">
               <span class="tab-title">Laboratorio B</span>
-              <span class="tab-desc">33 PCs &bull; 4 filas &bull; Volteck & UPS (Provisional)</span>
+              <span class="tab-desc">36 PCs • F0-F4 • Volteck & UPS confirmados</span>
             </span>
           </button>
         </div>
 
-        <!-- Leyenda Eléctrica -->
-        <div class="layout-legend" aria-label="Leyenda de protección eléctrica">
+        <!-- Leyenda Eléctrica y Operativa -->
+        <div class="layout-legend" aria-label="Leyenda de protección eléctrica y estado operativo">
           <div class="legend-chip chip-ups">
             <span class="indicator-dot dot-ups"></span>
-            <span>UPS APC (Batería y respaldo)</span>
+            <span>UPS APC</span>
           </div>
           <div class="legend-chip chip-volteck">
             <span class="indicator-dot dot-volteck"></span>
             <span>Regulador Volteck</span>
           </div>
-          <div class="legend-chip chip-provisional">
-            <span class="badge-provisional-pill">Provisional</span>
-            <span>Distribución sujeta a verificación</span>
+          <div class="legend-chip chip-extension">
+            <span class="indicator-strip strip-extension"></span>
+            <span>Extensión pasillo (Cal. 3x14)</span>
+          </div>
+          <div class="legend-chip chip-warning">
+            <span class="badge-disabled-icon">⚠️</span>
+            <span>Inhabilitada</span>
+          </div>
+          <div class="legend-chip chip-vacio">
+            <span class="slot-vacio-dot"></span>
+            <span>Puesto vacío</span>
           </div>
         </div>
       </div>
@@ -246,6 +264,27 @@
                 </div>
               </dl>
 
+              <!-- Estado Operativo Independiente -->
+              <div class="status-box" id="detail-operativo-box">
+                <div class="status-box-header">
+                  <span class="status-badge-pill" id="detail-op-badge">Habilitada</span>
+                  <span class="status-box-title">Estado Operativo</span>
+                </div>
+                <div class="status-box-grid">
+                  <div class="status-subitem">
+                    <span class="status-sub-label">Alimentación:</span>
+                    <span class="status-sub-val" id="detail-op-power">Disponible</span>
+                  </div>
+                  <div class="status-subitem">
+                    <span class="status-sub-label">Conexión LAN:</span>
+                    <span class="status-sub-val" id="detail-op-lan">Disponible</span>
+                  </div>
+                </div>
+                <div id="detail-op-motivo-box" class="motivo-alert" style="display: none;">
+                  <strong>Motivo de inhabilitación:</strong> <span id="detail-op-motivo-text"></span>
+                </div>
+              </div>
+
               <!-- Protección Eléctrica -->
               <div class="protection-box" id="detail-protection-box">
                 <div class="protection-header">
@@ -263,6 +302,20 @@
                     <strong>Nota provisional:</strong> <span id="detail-provisional-text">Asignación provisional sujeta a confirmación en visita física.</span>
                   </div>
                 </div>
+              </div>
+
+              <!-- Extensión Eléctrica (Activo independiente) -->
+              <div class="extension-box" id="detail-extension-box" style="display: none;">
+                <div class="extension-header">
+                  <span class="extension-icon" aria-hidden="true">🔌</span>
+                  <div>
+                    <h4 class="extension-title">Extensión de Pasillo (4m)</h4>
+                    <span class="extension-device-id" id="detail-ext-id">ID: EXT-A-01</span>
+                  </div>
+                </div>
+                <p class="extension-text" id="detail-ext-desc">
+                  Extensión aterrizada Volteck calibre 3x14 AWG requerida para alcanzar la toma de pared desde el pasillo.
+                </p>
               </div>
 
               <div class="detail-actions">
