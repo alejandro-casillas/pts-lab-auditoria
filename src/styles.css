@@ -134,23 +134,36 @@ body {
   align-items: center;
 }
 
-.status-indicator {
+.btn-export-pdf {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.4rem 0.8rem;
-  background-color: var(--color-bg);
+  padding: 0.55rem 1.1rem;
+  background-color: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-full);
-  font-size: 0.825rem;
-  color: var(--color-text-secondary);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  cursor: pointer;
+  box-shadow: var(--shadow-subtle);
+  transition: all 0.15s ease;
 }
 
-.status-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #10b981;
-  border-radius: 50%;
+.btn-export-pdf:hover {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-border-hover);
+  transform: translateY(-1px);
+}
+
+.btn-export-pdf:active {
+  transform: translateY(0);
+}
+
+.btn-pdf-icon {
+  font-size: 1.1rem;
+  line-height: 1;
 }
 
 /* ==========================================================================
@@ -1290,5 +1303,283 @@ body {
 
   .tab-group {
     flex-direction: column;
+  }
+}
+
+/* ==========================================================================
+/* ==========================================================================
+   Estilos de Pantalla e Impresión (Exportar PDF Monocromático ATS)
+   ========================================================================== */
+.print-report-container {
+  display: none;
+}
+
+@media screen {
+  .print-report-container {
+    display: none !important;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 12mm 12mm 12mm;
+  }
+
+  /* Ocultar interfaz interactiva de pantalla */
+  .app-container,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Mostrar exclusivamente el reporte institucional ATS */
+  .print-report-container {
+    display: block !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 8.5pt !important;
+    line-height: 1.35 !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    font-size: 8.5pt !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .ats-report {
+    width: 100%;
+    color: #000000;
+  }
+
+  .ats-page-break {
+    page-break-before: always;
+    break-before: page;
+    height: 0;
+  }
+
+  /* Encabezado ATS Centrado */
+  .ats-header {
+    text-align: center;
+    margin-bottom: 12px;
+  }
+
+  .ats-inst-title {
+    font-size: 13pt;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    margin: 0 0 2px 0;
+    color: #000000;
+  }
+
+  .ats-inst-subtitle {
+    font-size: 11pt;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    margin: 0 0 3px 0;
+    color: #000000;
+  }
+
+  .ats-doc-title {
+    font-size: 10pt;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin: 0 0 2px 0;
+    color: #000000;
+  }
+
+  .ats-doc-meta {
+    font-size: 8.5pt;
+    font-weight: 400;
+    margin: 0 0 6px 0;
+    color: #222222;
+  }
+
+  .ats-divider {
+    width: 100%;
+    border-bottom: 1.5px solid #000000;
+    margin-top: 4px;
+  }
+
+  /* Secciones ATS */
+  .ats-section {
+    margin-bottom: 12px;
+  }
+
+  .ats-section-title {
+    font-size: 9pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 2px;
+    margin: 10px 0 6px 0;
+    color: #000000;
+  }
+
+  /* Tablas Monocromáticas ATS */
+  .ats-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 8pt;
+    margin-bottom: 4px;
+  }
+
+  .ats-table th,
+  .ats-table td {
+    border: 1px solid #000000;
+    padding: 3.5px 6px;
+    color: #000000;
+  }
+
+  .ats-table thead th {
+    background-color: #f2f2f2 !important;
+    font-weight: 700;
+    font-size: 8pt;
+  }
+
+  /* Distribución Topológica ATS */
+  .ats-legend-note {
+    font-size: 7.5pt;
+    margin: 0 0 6px 0;
+    color: #222222;
+  }
+
+  .ats-plan-wrapper {
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  .ats-plan-subhead {
+    font-size: 8pt;
+    font-weight: 700;
+    margin-bottom: 3px;
+    border-left: 3px solid #000000;
+    padding-left: 5px;
+  }
+
+  .ats-plan-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 7.5pt;
+  }
+
+  .ats-plan-table th,
+  .ats-plan-table td {
+    border: 1px solid #000000;
+    padding: 3px 4px;
+    text-align: center;
+  }
+
+  .ats-plan-table thead th {
+    background-color: #f2f2f2 !important;
+    font-weight: 700;
+    font-size: 7.5pt;
+  }
+
+  .ats-col-row {
+    font-weight: 700;
+    background-color: #f9f9f9 !important;
+    width: 8%;
+  }
+
+  .ats-col-group {
+    width: 22%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .ats-col-aisle {
+    width: 4%;
+    color: #555555;
+    font-weight: 700;
+    background-color: #f9f9f9 !important;
+  }
+
+  .ats-pc-item {
+    display: inline-block;
+    padding: 0 2px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .ats-pc-item small {
+    font-size: 6.5pt;
+    font-weight: 400;
+  }
+
+  .ats-pc-inh {
+    text-decoration: underline;
+  }
+
+  .ats-slot-vacio {
+    font-style: italic;
+    color: #666666;
+    font-size: 7pt;
+  }
+
+  /* Observaciones Técnicas */
+  .ats-obs-block {
+    font-size: 8pt;
+    line-height: 1.4;
+  }
+
+  .ats-obs-item {
+    margin: 0 0 5px 0;
+    text-align: justify;
+  }
+
+  /* Firmas Institucionales ATS */
+  .ats-signatures-section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin-top: 24px;
+  }
+
+  .ats-signatures {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 36px;
+    margin-bottom: 12px;
+  }
+
+  .ats-sig-col {
+    width: 220px;
+    text-align: center;
+  }
+
+  .ats-sig-line {
+    border-top: 1px solid #000000;
+    margin-bottom: 5px;
+    width: 100%;
+  }
+
+  .ats-sig-name {
+    font-size: 8pt;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .ats-sig-dept {
+    font-size: 7.5pt;
+    color: #333333;
+    margin: 1px 0 0 0;
+  }
+
+  .ats-footer-date {
+    text-align: center;
+    font-size: 7pt;
+    color: #555555;
+    margin-top: 16px;
+    border-top: 0.5px solid #cccccc;
+    padding-top: 4px;
   }
 }

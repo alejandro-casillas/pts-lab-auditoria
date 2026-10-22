@@ -678,11 +678,231 @@ function switchTab(labId) {
   renderFloorPlan();
 }
 
+// ============================================================================
+// Generación del Informe Imprimible (Exportar PDF Monocromático ATS)
+// ============================================================================
+/**
+ * Renderiza una celda compacta de estación para la tabla del plano en el informe ATS.
+ */
+function formatPrintCell(p) {
+  if (!p) return '';
+  if (p.tipo === 'vacio') {
+    return `<span class="ats-slot-vacio">[Vacío]</span>`;
+  }
+  const isInh = p.operativo && p.operativo.estado === 'inhabilitada';
+  const protCode = !p.proteccion ? 'SP' : (p.proteccion.tipo === 'ups_apc' ? 'UPS' : (p.proteccion.tipo === 'regulador_volteck' ? 'VOL' : 'DIR'));
+  const extMark = p.extensionElectrica ? '*' : '';
+  const inhMark = isInh ? '(!)' : '';
+
+  return `<span class="ats-pc-item ${isInh ? 'ats-pc-inh' : ''}">${p.id}${inhMark} <small>[${protCode}${extMark}]</small></span>`;
+}
+
+/**
+ * Renderiza el plano físico estructurado como tabla formal ATS.
+ */
+function renderPrintLabTable(lab) {
+  const docenteInh = lab.docentePC?.operativo?.estado === 'inhabilitada' ? '(!)' : '';
+  const docenteProt = lab.docentePC?.proteccion?.tipo === 'ups_apc' ? 'UPS' : 'DIR';
+  
+  let rowsHtml = '';
+  lab.filas.forEach((f) => {
+    // Left: 4 slots -> 2 pairs
+    const izq1 = `${formatPrintCell(f.izquierda[0])}  ${formatPrintCell(f.izquierda[1])}`;
+    const izq2 = `${formatPrintCell(f.izquierda[2])}  ${formatPrintCell(f.izquierda[3])}`;
+    // Right: 4 slots -> 2 pairs
+    const der1 = `${formatPrintCell(f.derecha[0])}  ${formatPrintCell(f.derecha[1])}`;
+    const der2 = `${formatPrintCell(f.derecha[2])}  ${formatPrintCell(f.derecha[3])}`;
+
+    rowsHtml += `
+      <tr>
+        <td class="ats-col-row"><strong>${f.id}</strong></td>
+        <td class="ats-col-group">${izq1}</td>
+        <td class="ats-col-group">${izq2}</td>
+        <td class="ats-col-aisle">|</td>
+        <td class="ats-col-group">${der1}</td>
+        <td class="ats-col-group">${der2}</td>
+      </tr>
+    `;
+  });
+
+  return `
+    <div class="ats-plan-wrapper">
+      <div class="ats-plan-subhead">
+        <strong>${lab.nombre.toUpperCase()}</strong> (${lab.filas.length} filas • Docente: ${lab.docentePC ? lab.docentePC.id : 'N/A'}${docenteInh} [${docenteProt}])
+      </div>
+      <table class="ats-plan-table">
+        <thead>
+          <tr>
+            <th style="width: 8%;">Fila</th>
+            <th colspan="2" style="width: 44%;">Sección Izquierda (Pares 1 y 2)</th>
+            <th style="width: 4%;">Pasillo</th>
+            <th colspan="2" style="width: 44%;">Sección Derecha (Pares 1 y 2)</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rowsHtml}
+        </tbody>
+      </table>
+    </div>
+  `;
+}
+
+/**
+ * Genera el informe institucional para impresión / exportación a PDF con estética ATS.
+ */
+function renderPrintReport() {
+  const container = document.getElementById('print-report');
+  if (!container) return;
+
+  const metrics = calculateMetrics(state.data);
+  const now = new Date();
+  const meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+  const fechaMesAno = `${meses[now.getMonth()]} de ${now.getFullYear()}`;
+  const fechaCompleta = `${now.getDate()} de ${meses[now.getMonth()]} de ${now.getFullYear()}`;
+
+  const labA = state.data.laboratorios.find((l) => l.id === 'LAB-A');
+  const labB = state.data.laboratorios.find((l) => l.id === 'LAB-B');
+
+  container.innerHTML = `
+    <div class="ats-report">
+      <!-- Encabezado Institucional Centrado Monocromático -->
+      <header class="ats-header">
+        <h1 class="ats-inst-title">UNIVERSIDAD DE GUADALAJARA</h1>
+        <h2 class="ats-inst-subtitle">PREPARATORIA TONALÁ SUR</h2>
+        <h3 class="ats-doc-title">INVENTARIO DE INFRAESTRUCTURA</h3>
+        <p class="ats-doc-meta">Laboratorios de cómputo A y B • ${fechaMesAno}</p>
+        <div class="ats-divider"></div>
+      </header>
+
+      <!-- Sección 1: Resumen Ejecutivo y Comparativo -->
+      <section class="ats-section">
+        <h4 class="ats-section-title">1. RESUMEN EJECUTIVO Y COMPARATIVA DE INFRAESTRUCTURA</h4>
+        <table class="ats-table">
+          <thead>
+            <tr>
+              <th style="text-align: left;">CONCEPTO</th>
+              <th style="text-align: center; width: 22%;">LABORATORIO A</th>
+              <th style="text-align: center; width: 22%;">LABORATORIO B</th>
+              <th style="text-align: center; width: 22%;">TOTAL GENERAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Computadoras físicas totales</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-A'].total}</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-B'].total}</td>
+              <td style="text-align: center;"><strong>${metrics.totalPCs}</strong></td>
+            </tr>
+            <tr>
+              <td>Estaciones habilitadas (operativas)</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-A'].habilitadas}</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-B'].habilitadas}</td>
+              <td style="text-align: center;"><strong>${metrics.totalHabilitadas}</strong></td>
+            </tr>
+            <tr>
+              <td>Estaciones inhabilitadas</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-A'].inhabilitadas}</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-B'].inhabilitadas}</td>
+              <td style="text-align: center;"><strong>${metrics.totalInhabilitadas}</strong></td>
+            </tr>
+            <tr>
+              <td>Estaciones de alumnos (numeradas regulares)</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-A'].alumnos}</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-B'].alumnos}</td>
+              <td style="text-align: center;">${metrics.totalAlumnos}</td>
+            </tr>
+            <tr>
+              <td>Estaciones de ampliación física (Fila F0)</td>
+              <td style="text-align: center;">0</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-B'].ampliacion}</td>
+              <td style="text-align: center;">${metrics.totalAmpliacion}</td>
+            </tr>
+            <tr>
+              <td>Estaciones docentes principales (PC00)</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-A'].docentes}</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-B'].docentes}</td>
+              <td style="text-align: center;">${metrics.totalDocentes}</td>
+            </tr>
+            <tr>
+              <td>Unidades UPS APC (estaciones de alumnos)</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-A'].upsCount}</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-B'].upsCount}</td>
+              <td style="text-align: center;"><strong>${metrics.totalUpsApc}</strong></td>
+            </tr>
+            <tr>
+              <td>Reguladores Volteck (estaciones de alumnos)</td>
+              <td style="text-align: center;">0</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-B'].volteckCount}</td>
+              <td style="text-align: center;"><strong>${metrics.totalVolteck}</strong></td>
+            </tr>
+            <tr>
+              <td>Extensiones eléctricas de pasillo (4m, Cal. 3x14)</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-A'].extensionesCount}</td>
+              <td style="text-align: center;">${metrics.labBreakdown['LAB-B'].extensionesCount}</td>
+              <td style="text-align: center;"><strong>${metrics.totalExtensiones}</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Sección 2: Distribución Física y Topología de Equipos -->
+      <section class="ats-section">
+        <h4 class="ats-section-title">2. DISTRIBUCIÓN FÍSICA Y TOPOLOGÍA DE EQUIPOS</h4>
+        <p class="ats-legend-note">
+          <strong>Nomenclatura:</strong> [UPS] = UPS APC &bull; [VOL] = Regulador Volteck &bull; [DIR] = Toma directa &bull; [SP] = Sin protección &bull; (*) = Requiere extensión de pasillo 4m &bull; (!) = Estación inhabilitada.
+        </p>
+        ${labA ? renderPrintLabTable(labA) : ''}
+        <div style="margin-top: 10px;"></div>
+        ${labB ? renderPrintLabTable(labB) : ''}
+      </section>
+
+      <div class="ats-page-break"></div>
+
+      <!-- Sección 3: Observaciones Técnicas y Diagnóstico -->
+      <section class="ats-section">
+        <h4 class="ats-section-title">3. OBSERVACIONES TÉCNICAS Y EQUIPOS INHABILITADOS</h4>
+        <div class="ats-obs-block">
+          <p class="ats-obs-item">
+            <strong>• Laboratorio B — Estación PC16 (Inhabilitada):</strong> Equipo con suministro eléctrico normal y protección de respaldo mediante UPS APC (UPS-B-04). Presenta falla física en el puerto de red ethernet de pared (nodo desconectado/dañado), imposibilitando la conexión a la red institucional LAN. Se requiere reponchado o sustitución del jack RJ45.
+          </p>
+          <p class="ats-obs-item">
+            <strong>• Laboratorio B — Fila F0 de Ampliación (LAB-B-EX01, EX02 y EX03 - Inhabilitadas):</strong> Tres computadoras físicas colocadas en el frente derecho del aula como parte de una ampliación no habilitada. No cuentan con infraestructura eléctrica disponible, conectividad de red LAN ni dispositivos de protección asignados. Se mantendrán fuera de servicio hasta el tendido de cableado e instalación de contactos regulados.
+          </p>
+          <p class="ats-obs-item">
+            <strong>• Infraestructura Eléctrica y Extensiones:</strong> Se registraron 18 extensiones reforzadas aterrizadas Volteck de 4 metros calibre 3x14 AWG (10 en LAB A y 8 en LAB B), necesarias para energizar las parejas de estaciones contiguas al pasillo central desde los contactos perimetrales.
+          </p>
+          <p class="ats-obs-item">
+            <strong>• Verificación en Sitio:</strong> La distribución eléctrica del Laboratorio B cuenta con confirmación física para las 8 parejas Volteck y las 8 parejas UPS APC.
+          </p>
+        </div>
+      </section>
+
+      <!-- Sección 4: Bloque Formal de Firmas -->
+      <section class="ats-section ats-signatures-section">
+        <div class="ats-signatures">
+          <div class="ats-sig-col">
+            <div class="ats-sig-line"></div>
+            <p class="ats-sig-name">Mtro. Responsable de Auditoría y TI</p>
+            <p class="ats-sig-dept">Preparatoria Tonalá Sur</p>
+          </div>
+          <div class="ats-sig-col">
+            <div class="ats-sig-line"></div>
+            <p class="ats-sig-name">Dirección / Secretaría Administrativa</p>
+            <p class="ats-sig-dept">Preparatoria Tonalá Sur</p>
+          </div>
+        </div>
+        <p class="ats-footer-date">Documento generado el ${fechaCompleta} • Sistema de Inventario de Infraestructura PTS</p>
+      </section>
+    </div>
+  `;
+}
+
 function setupEventListeners() {
   const tabA = document.getElementById('tab-lab-a');
   const tabB = document.getElementById('tab-lab-b');
   const btnClear = document.getElementById('btn-clear-selection');
   const btnCopy = document.getElementById('btn-copy-info');
+  const btnExportPdf = document.getElementById('btn-export-pdf');
 
   if (tabA) {
     tabA.addEventListener('click', () => switchTab('LAB-A'));
@@ -695,6 +915,17 @@ function setupEventListeners() {
   if (btnClear) {
     btnClear.addEventListener('click', clearSelection);
   }
+
+  if (btnExportPdf) {
+    btnExportPdf.addEventListener('click', () => {
+      renderPrintReport();
+      window.print();
+    });
+  }
+
+  window.addEventListener('beforeprint', () => {
+    renderPrintReport();
+  });
 
   if (btnCopy) {
     btnCopy.addEventListener('click', () => {
@@ -726,6 +957,7 @@ function init() {
   renderMetrics(metrics);
   setupEventListeners();
   renderFloorPlan();
+  renderPrintReport();
 }
 
 if (document.readyState === 'loading') {

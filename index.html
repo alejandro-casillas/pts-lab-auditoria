@@ -13,15 +13,14 @@
     <header class="app-header">
       <div class="header-inner">
         <div class="header-brand">
-          <div class="badge-tag">Auditoría de TI</div>
           <h1 class="header-title">Inventario de Infraestructura</h1>
           <p class="header-subtitle">Preparatoria Tonalá Sur &bull; Universidad de Guadalajara</p>
         </div>
-        <div class="header-meta">
-          <div class="status-indicator">
-            <span class="status-dot"></span>
-            <span class="status-text">Fase 1: Relevamiento y Auditoría Física</span>
-          </div>
+        <div class="header-meta no-print">
+          <button type="button" class="btn-export-pdf" id="btn-export-pdf" title="Generar informe imprimible en PDF">
+            <span class="btn-pdf-icon" aria-hidden="true">🖨️</span>
+            <span>Exportar PDF</span>
+          </button>
         </div>
       </div>
     </header>
@@ -340,10 +339,15 @@
     <!-- Footer Institucional -->
     <footer class="app-footer">
       <div class="footer-inner">
-        <p>&copy; 2026 Preparatoria Tonalá Sur &bull; Universidad de Guadalajara</p>
-        <p class="footer-subtitle">Sistema de Auditoría e Inventario Físico de Laboratorios &bull; Versión 1.0.0 Autónomo</p>
+        <p>&copy; Preparatoria Tonalá Sur &bull; Universidad de Guadalajara</p>
+        <p class="footer-subtitle">Sistema Institucional de Inventario de Infraestructura Eléctrica y Cómputo</p>
       </div>
     </footer>
+  </div>
+
+  <!-- Sección Exclusiva para Informe de Impresión / PDF Institucional -->
+  <div id="print-report" class="print-report-container" aria-hidden="true">
+    <!-- Inyectado dinámicamente por JS al cargar y antes de imprimir -->
   </div>
 
   <script type="module" src="./src/app.js"></script>
